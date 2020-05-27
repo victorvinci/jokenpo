@@ -1,0 +1,31 @@
+.select {
+  background-image: url('../../assets/images/bg-triangle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 300px;
+  margin: 50px auto;
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 50%;
+  grid-template-columns: 33% 33% 33%;
+
+  &-rock {
+    grid-row: 2;
+    grid-column: 2;
+    align-self: flex-end;
+  }
+
+  &-paper {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: flex-start;
+  }
+
+  &-scissor {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: flex-end;
+  }
+}
