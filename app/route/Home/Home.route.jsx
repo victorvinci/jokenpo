@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from '../../components';
+import { ScoreHeader, Button } from '../../components';
 
 export default class Home extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class Home extends Component {
   render() { 
     return ( 
       <main>
-        <h1>Welcome</h1>
+        <ScoreHeader />
         <Button />
       </main>
     );
