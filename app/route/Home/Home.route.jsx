@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScoreHeader, Button, SelectOption } from '../../components';
+import { ScoreHeader, Button, SelectOption, RulesModal } from '../../components';
 
 export default class Home extends Component {
   constructor(props) {
@@ -13,6 +13,7 @@ export default class Home extends Component {
         <ScoreHeader />
         <SelectOption />
         <Button />
+        <RulesModal />
       </main>
     );
   }
