@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from '../../components';
 
 export default class RulesModal extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ export default class RulesModal extends Component {
   render() { 
     return ( 
       <section>
+        <Button />
         <h3>Rules</h3>
       </section>
     );
