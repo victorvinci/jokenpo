@@ -5,6 +5,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.selectOption = this.selectOption.bind(this);
+    this.clearScore = this.clearScore.bind(this);
 
     this.state = { 
       selected: null,
@@ -29,8 +30,27 @@ export default class Home extends Component {
     }, () => this.pickForHouse());
   }
 
+  checkWinner(userPick, housePick) {
+    if ( (userPick !== housePick) && (userPick === 'rock' && housePick === 'paper') || (userPick === 'paper' && housePick === 'scissor') || (userPick === 'scissor' && housePick === 'rock') ) {
+      return 'House wins!';
+
+    } else if ( userPick === housePick ) {
+      return 'Draw';
+
+    } else {
+      return 'You win!';
+    }
+  }
+
+  clearScore() {
+    this.setState({
+      selected: null,
+      housePick: null
+    });
+  }
+
   render() { 
-    const { selected, housePick } = this.state;
+    const { selected, housePick, options } = this.state;
 
     return ( 
       <main>
@@ -38,12 +58,15 @@ export default class Home extends Component {
 
         { (!selected && !housePick) ? (
           <SelectOption 
+            options={ options }
             action={ this.selectOption }
           />
         ) : (
           <SelectedOption 
             selected={ selected }
             housePick={ housePick }
+            winner={ this.checkWinner(selected, housePick) }
+            clearScore={ this.clearScore }
           />
         ) }
 
