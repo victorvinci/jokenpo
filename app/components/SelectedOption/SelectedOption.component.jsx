@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import { Button } from '../../components';
 
 export default class SelectedOption extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class SelectedOption extends Component {
   }
 
   render() { 
-    const { selected, housePick } = this.props;
+    const { selected, housePick, winner, clearScore } = this.props;
 
     return ( 
       <section className="selected">
@@ -21,6 +22,13 @@ export default class SelectedOption extends Component {
           <p>The house picked</p>
           <span>{ housePick }</span>
         </div>
+
+        <h3>{ winner }</h3>
+
+        <Button 
+          name={ 'Play Again' }
+          action={ clearScore }
+        />
       </section>
     );
   }

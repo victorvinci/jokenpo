@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
 export default class Button extends Component {
@@ -7,9 +8,11 @@ export default class Button extends Component {
   }
 
   render() {
+    const { name, action } = this.props;
+
     return ( 
       <div>
-        <button onClick={ () => console.log('clicked') }> Click Me </button>
+        <button onClick={ () => action() }> { name } </button>
       </div>
     );
   }
