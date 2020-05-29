@@ -9,13 +9,13 @@ export default class SelectOption extends Component {
   }
 
   render() { 
-    const { action } = this.props;
+    const { action, options } = this.props;
 
     return ( 
       <section className="select">
-        <option className="select-rock" value="rock" onClick={ () => action('rock') }>Rock</option>
-        <option className="select-paper" value="paper" onClick={ () => action('paper') }>Paper</option>
-        <option className="select-scissor" value="scissor" onClick={ () => action('scissor') }>Scissor</option>
+        {options.map(option => {
+          return <option key={ option } className={ `select-${option}` } value={ option } onClick={ () => action(option) }>{ option }</option>;
+        })}
       </section>
     );
   }
